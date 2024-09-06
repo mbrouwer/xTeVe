@@ -1726,31 +1726,7 @@ function showPreview(element) {
             return;
             break;
     }
-    var streams = ["activeStreams", "inactiveStreams"];
-    streams.forEach(function (preview) {
-        var table = document.getElementById(preview);
-        table.innerHTML = "";
-        var obj = SERVER["data"]["StreamPreviewUI"][preview];
-        obj.forEach(function (channel) {
-            var tr = document.createElement("TR");
-            var tdKey = document.createElement("TD");
-            var tdVal = document.createElement("TD");
-            tdKey.className = "tdKey";
-            tdVal.className = "tdVal";
-            switch (preview) {
-                case "activeStreams":
-                    tdKey.innerText = "Channel: (+)";
-                    break;
-                case "inactiveStreams":
-                    tdKey.innerText = "Channel: (-)";
-                    break;
-            }
-            tdVal.innerText = channel;
-            tr.appendChild(tdKey);
-            tr.appendChild(tdVal);
-            table.appendChild(tr);
-        });
-    });
+    var streams = ["activeStreams"];
     showElement("loading", false);
     div.className = "visible";
     return;
