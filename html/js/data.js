@@ -45,38 +45,6 @@ function showMyStreams(allStreamsObj) {
     // Create Table for activeStreams
     var table = document.getElementById(streamType);
 
-    for (var i = 0; i < streamsNames.length; i++) {
-      var newEntry = new Object();
-      newEntry["_element"] = "TR";
-      table.appendChild(createElement(newEntry));
-      var line = table.lastChild;
-
-      var tmp = streamsObj[streamsNames[i]]
-      var keys = getObjKeys(tmp)
-
-      var newKey = new Object()
-      newKey["_element"]  = "TD";
-      //newKey["_text"]     = streamsNames[i];
-      switch(streamType) {
-        case "activeStreams": newKey["_text"]     = "Channel (+):"; break;
-        case "inactiveStreams": newKey["_text"]   = "Channel (-):"; break;
-      }
-      
-      newKey["class"]     = "tdKey";
-      console.log();
-
-
-      var newVal = new Object()
-      newVal["_element"]  = "TD";
-      newVal["_text"]     = streamsNames[i];
-      newVal["class"]     = "tdVal";
-      //newVal["_text"]     = value;
-      
-      line.appendChild(createElement(newKey));
-      line.appendChild(createElement(newVal));
-      
-    }
-
   }
 
   return
